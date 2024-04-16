@@ -36,6 +36,17 @@ This project provides a text analyzer tool with the following features:
     *   `jest`: Dev dependency, for unit testing
     *   `supertest`: Dev dependency, provides a high-level abstraction for testing HTTP
 
+### Running the Application
+
+1.  **Start the Development Server**
+    ```bash
+    npm start  
+    ```
+    This will typically start the server on port 3000.
+
+2. **Open in Browser**
+    Open `http://localhost:3000` in your web browser to access the Text Analyzer application.
+
 ### Project Structure
 
 The project has the following basic file structure:
@@ -56,21 +67,8 @@ text-analyzer/
   README.md 
 ```
 
-### Running the Application
-
-1.  **Install packages**
-    ```bash
-    npm install  
-    ```
-2.  **Start the Development Server**
-    ```bash
-    npm start  
-    ```
-    This will typically start the server on port 3000.
-
-3. **Open in Browser**
-    Open `http://localhost:3000` in your web browser to access the Text Analyzer application.
-4. **Run Tests**
+### Running Tests
+To run test use the following command
     ```bash
     npm test  
     ```
