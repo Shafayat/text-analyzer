@@ -18,7 +18,7 @@ This project provides a text analyzer tool with the following features:
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/text-analyzer.git
+    git clone https://github.com/Shafayat/text-analyzer.git
     ```
 2.  **Navigate into the Project Directory**
     ```bash
