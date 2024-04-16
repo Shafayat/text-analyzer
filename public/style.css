@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif; /* Softer font */
+    margin: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333; /* Slightly darker text */
+    text-align: center;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2c3e50; /* Darker, richer color for the heading */
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff; /* Crisp white background */
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hover effect */
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Results Styles */
+/* General Results Styling */
+#results {
+    text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    margin: auto;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#results p {
+    margin-bottom: 10px;
+}
+
+#results strong {
+    font-weight: bold;
+}
+
+#results ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 20px; /* Make space for the image */
+}
+
+#results ul li::before { /* Target the area before each list item */
+    display: inline-block;
+    width: 10px; /* Adjust as needed */
+    height: 10px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+header {
+    background-color: #fff; /* Or a subtle gradient */
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky; /* Optionally make the header stick to the top */
+    top: 0;
+    z-index: 10; /* Ensure it stays above other content */
+}
+
+header h1 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+nav {
+    display: flex; /* Use Flexbox for easy alignment */
+    justify-content: center; /* Or space-between to spread links */
+    align-items: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #4285F4;  /* A bolder link color */
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #2a6496; /* Darker on hover */
+}
+
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #4285F4; /* Add an underline effect */
+}

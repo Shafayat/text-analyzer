@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Text Analyzer</h1>
+    <nav>
+        <a href="/analyze/words">Word Count</a>
+        <a href="/analyze/characters">Character Count</a>
+        <a href="/analyze/sentences">Sentences Count</a>
+        <a href="/analyze/paragraphs">Paragraphs Count</a>
+        <a href="/analyze/longestWords">Longest Words</a>
+    </nav>
+</header>
+<form id="uploadForm"> <input type="file" name="sample" accept=".txt" />
+    <button type="submit">Upload & Analyze</button>
+</form>
+
+<h1>Text Analyzer Results</h1>
+<div id="results"></div>
+
+<script>
+    const uploadForm = document.getElementById('uploadForm');
+    const resultsDiv = document.getElementById('results');
+
+    uploadForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default submission
+
+        const formData = new FormData(uploadForm);
+        const file = formData.get('sample');
+
+        // Check if a file is selected
+        if (!file) {
+            alert('Please select a file.');
+            return;
+        }
+
+        fetch('http://localhost:3000/upload', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                resultsDiv.innerHTML = ''; // Clear previous results
+
+                for (const property in data) {
+                    if (typeof data[property] === 'object') {
+                        // Nested object handling
+                        resultsDiv.innerHTML += `<p><strong>${property}:</strong></p>`;
+                        const nestedProperties = data[property];
+                        resultsDiv.innerHTML += '<ul>';
+                        for (const nestedProp in nestedProperties) {
+                            resultsDiv.innerHTML += `<li>${nestedProp}: ${nestedProperties[nestedProp]}</li>`;
+                        }
+                        resultsDiv.innerHTML += '</ul>';
+                    } else {
+                        // Regular property
+                        resultsDiv.innerHTML += `<p>${property}: ${data[property]}</p>`;
+                    }
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+</html>
