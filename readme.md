@@ -69,6 +69,6 @@ text-analyzer/
 
 ### Running Tests
 To run test use the following command
-    ```bash
-    npm test  
-    ```
+```bash
+npm start  
+```
