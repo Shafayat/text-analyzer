@@ -55,7 +55,7 @@ The project has the following basic file structure:
 text-analyzer/
   textAnalyzer.js
   index.js
-  __tests__/
+  tests/
     api.test.js
     textAnalyzer.test.js
   uploads/       
